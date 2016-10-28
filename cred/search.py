@@ -27,6 +27,11 @@ def cred_search(user, cfilter='special', value='all', sortdir='ascending', sort=
 
     # Standard search, substring in title
     elif cfilter == 'search':
+        for v in value.split(' '):
+            cred_list = cred_list.filter(Q(tags__name__icontains=str(v)) \
+                                         | Q(title__icontains=str(v)))
+        search_object = value
+
         cred_list = cred_list.filter(title__icontains=value)
         search_object = value
 
