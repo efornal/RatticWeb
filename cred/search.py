@@ -32,7 +32,7 @@ def cred_search(user, cfilter='special', value='all', sortdir='ascending', sort=
                                          | Q(title__icontains=v))
         search_object = value
 
-        cred_list = cred_list.filter(title__icontains=value)
+        #cred_list = cred_list.filter(title__icontains=value)
         search_object = value
 
     # Search for the history of a cred
